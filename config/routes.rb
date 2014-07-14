@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  get 'welcome/index'
-  get 'welcome/about'
+  resources :todos, only: [:index, :new, :create, :destroy]
+
+  get 'about' => 'welcome#about'
 
   root to: 'welcome#index'
 

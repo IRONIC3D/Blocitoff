@@ -33,7 +33,6 @@
    font-size: 14px;
    color: #ffffff;
  }
- 
  .navbar {
    height: 42px;
  }
@@ -67,13 +66,20 @@
  .container .row-fluid.row-fluid-1 {
    margin: 25px 0px 0px 0px;
  }
- .container .container {
+.container .row-fluid-1 .span12 .container .heading {
+   text-align: center;
+   font-family:"federo";
+ }
+ .container .row-fluid .span4 div .heading {
+   font-family:"oswald";
+ }
+ .container .container.container-1 {
    margin-top: 25px;
  }
  .container .container .row-fluid .span6 .pull-center.pull-center-1 {
    background: rgba(232, 63, 63, 0.8);
    border-radius: 6px;
-   height: 200px;
+   // height: 200px;
  }
  .container .container .row-fluid .span6 .pull-center-1 .heading {
    text-align: center;
@@ -86,8 +92,14 @@
    padding: 25px 10px 25px 10px;
    font-family:"oswald";
  }
-
+.container .container-1 .row-fluid .span6 .pull-center .table.table-striped thead tr th {
+   text-align: center;
+ }
+ .container .container-1 .row-fluid .span6 .pull-center .table.table-striped tbody tr td.td-1 {
+   text-align: center;
+ }
  .footer {
  	color: white;
  	padding-top: 10px;
  }
+
