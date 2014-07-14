@@ -1,1 +1,93 @@
 @import "bootstrap";
+
+ body {
+   padding-left: 0;
+   padding-right: 0;
+ }
+ /* This makes absolutely positioned elements like p, h1,
+     and some bootstrap elements placed properly. */
+ #absolute-wrapper p, #absolute-wrapper h1, #absolute-wrapper h2, #absolute-wrapper h3, #absolute-wrapper h4, #absolute-wrapper h5, #absolute-wrapper h6 {
+   margin-top: 0 !important;
+ }
+ #absolute-wrapper {
+   position: relative;
+   width: 980px;
+   margin: 0 auto;
+   height: 1px;
+ }
+ #absolute-wrapper .navbar.navbar-inverse {
+   height: 42px;
+   width: 980px;
+   position: absolute;
+   top: 968px;
+   left: 0px;
+ }
+ #absolute-wrapper .navbar.navbar-inverse .navbar-inner {
+   background: #303030;
+   height: 42px;
+   padding-left: 20px;
+   padding-right: 20px;
+ }
+ #absolute-wrapper .navbar.navbar-inverse .brand {
+   text-shadow: none;
+   font-size: 14px;
+   color: #ffffff;
+ }
+ 
+ .navbar {
+   height: 42px;
+ }
+ .navbar .navbar-inner {
+   height: 42px;
+   padding-left: 20px;
+   padding-right: 20px;
+ }
+ .navbar .navbar-inner.navbar-inner-1 {
+   background: #f46363;
+   background-image: -moz-linear-gradient(270deg, #f46363 0%, #e83f3f 100%);
+   background-image: -webkit-linear-gradient(270deg, #f46363 0%, #e83f3f 100%);
+   background-image: -o-linear-gradient(270deg, #f46363 0%, #e83f3f 100%);
+   background-image: linear-gradient(180deg, #f46363 0%, #e83f3f 100%);
+ }
+ .navbar .navbar-inner-1 .responsive-container .brand {
+   color: #ffffff;
+   text-shadow: none;
+   font-family:"federo";
+ }
+ #signin a {
+   text-shadow: none;
+   font-family:"oswald";
+   color: #ffffff;
+ }
+ #signup a {
+   color: #ffffff;
+   font-family:"oswald";
+   text-shadow: none;
+ }
+ .container .row-fluid.row-fluid-1 {
+   margin: 25px 0px 0px 0px;
+ }
+ .container .container {
+   margin-top: 25px;
+ }
+ .container .container .row-fluid .span6 .pull-center.pull-center-1 {
+   background: rgba(232, 63, 63, 0.8);
+   border-radius: 6px;
+   height: 200px;
+ }
+ .container .container .row-fluid .span6 .pull-center-1 .heading {
+   text-align: center;
+   color: #ffffff;
+   padding: 25px 0px 10px 0px;
+   font-family:"federo";
+ }
+ .container .container .row-fluid .span6 .pull-center-1 p {
+   text-align: center;
+   padding: 25px 10px 25px 10px;
+   font-family:"oswald";
+ }
+
+ .footer {
+ 	color: white;
+ 	padding-top: 10px;
+ }

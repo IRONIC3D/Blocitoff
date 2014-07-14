@@ -3,18 +3,60 @@
 <head>
   <title>Blocitoff</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <!-- <link href="/assets/bootstrap.css" media="screen" rel="stylesheet" type="text/css" /> -->
+  <link href="/assets/bootstrap-responsive.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/assets/common.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/assets/fontawesome.css" media="screen" rel="stylesheet" type="text/css" />
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <link href="https://fonts.googleapis.com/css?family=Limelight|Flamenco|Federo|Yesteryear|Josefin Sans|Spinnaker|Sansita One|Handlee|Droid Sans|Oswald:400,300,700" media="screen" rel="stylesheet" type="text/css" />
+  <!-- Typekit fonts require an account and a kit containing the fonts used. see https://typekit.com/plans for details. <script type="text/javascript" src="//use.typekit.net/YOUR_KIT_ID.js"></script>
+  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+-->
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <div class="container">
-    <ul class="nav nav-tabs">
-      <li><%= link_to "Bloccit", welcome_index_path %></li>
-      <li><%= link_to "About", welcome_about_path %></li>
-    </ul>
-
-    <%= yield %>
+  <div class="navbar navbar-fixed-top">
+    <div class="navbar-inner navbar-inner-1">
+      <div class="responsive-container">
+        <a class="btn btn-navbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+        <%= link_to "Bloccitoff", welcome_index_path, class: "brand" %>
+        <div class="nav-collapse collapse">
+          <ul class="nav pull-right">
+            <li id="signin">
+              <a href="#">Sign In</a>
+            </li>
+            <li id="signup">
+              <a href="#">Sign Up</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
   </div>
 
+  
+
+  <div class="container">
+    <div class="row-fluid row-fluid-1">
+      <span class="span12"></span>
+    </div>
+
+      <%= yield %>
+
+  </div>
+
+  <div class="navbar navbar-inverse navbar-fixed-bottom">
+    <div class="responsive-container">
+      <div class="navbar-inner">
+        <p class="footer" href="#">Copywriter 2014</p>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
+<body>
+</body>

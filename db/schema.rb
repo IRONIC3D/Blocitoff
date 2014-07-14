@@ -15,8 +15,6 @@ ActiveRecord::Schema.define(version: 20140711215427) do
 
   create_table "todos", force: true do |t|
     t.string   "title"
-    t.date     "remaining"
-    t.boolean  "complte"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
