@@ -1,4 +1,5 @@
 class TodosController < ApplicationController
+  respond_to :html, :js
   before_action :set_todo, only: [:destroy]
 
   def index
@@ -22,11 +23,17 @@ class TodosController < ApplicationController
       flash[:error] = "There was an error saving the post. Please try again."
       render :index
     end
+
   end
 
   def destroy
     @todo.destroy
-    redirect_to todos_path
+    # redirect_to todos_path
+    
+    
+    respond_with(@todo) do |format|
+      format.html { redirect_to todos_path }
+    end
   end
 
   private

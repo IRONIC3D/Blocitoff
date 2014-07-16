@@ -38,17 +38,17 @@
                 </thead>
                 <tbody>
                   <% @todos.each do |todo| %>
-                    <tr>
+                    <%= content_tag :tr, id: "todo-#{todo.id}" do %>
                       <td><%= todo.title %></td>
                       <td class="td-1"><% from_time = todo.created_at %><%= distance_of_time_in_words(from_time, from_time + 7.days) %></td>
                       <td>
                         <label class="checkbox">
                           
-                          <%= link_to todo, method: :delete do %><input type="checkbox" value="" name=""><% end %>
+                          <%= link_to todo, method: :delete, remote: true do %><input type="checkbox" value="" name=""><% end %>
                           <span></span>
                         </label>
                       </td>
-                    </tr>
+                    <% end %>
                   <% end %>
                 </tbody>
               </table>
