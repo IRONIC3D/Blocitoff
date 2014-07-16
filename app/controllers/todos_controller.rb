@@ -2,7 +2,7 @@ class TodosController < ApplicationController
   before_action :set_todo, only: [:destroy]
 
   def index
-    @todos = Todo.all
+    @todos = Todo.where(user_id: current_user.id)
     @todo = Todo.new
   end
 
@@ -10,7 +10,7 @@ class TodosController < ApplicationController
   end
 
   def create
-    @todo = Todo.new(todos_params)
+    @todo = current_user.todos.build(todos_params)
     if @todo.save
       flash[:notice] = "Post was saved."
       redirect_to todos_path
