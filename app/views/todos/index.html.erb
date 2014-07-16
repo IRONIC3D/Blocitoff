@@ -11,12 +11,15 @@
       <div class="row-fluid">
         <span class="span4"></span>
         <span class="span4">
-          <div>
-            <h3 class="heading">What do you want to do?</h3>
-          </div>
-          <span></span>
-          <input class="textinput" type="text" name="" placeholder="Type your to-do">
-          <button class="btn btn-primary">Add</button>
+          <%= form_for @todo do |f| %>
+            <div>
+              <h3 class="heading">What do you want to do?</h3>
+            </div>
+            <span></span>
+            <%= f.label :title %>
+            <%= f.text_field :title, class: "textinput", placeholder: "Type your to-do" %>
+            <%= f.submit "Add", class: "btn btn-primary" %>
+          <% end %>
         </span>
         <span class="span4"></span>
       </div>

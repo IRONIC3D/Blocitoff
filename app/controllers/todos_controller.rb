@@ -3,13 +3,21 @@ class TodosController < ApplicationController
 
   def index
     @todos = Todo.all
+    @todo = Todo.new
   end
 
   def new
   end
 
   def create
-    
+    @todo = Todo.new(todos_params)
+    if @todo.save
+      flash[:notice] = "Post was saved."
+      redirect_to todos_path
+    else
+      flash[:error] = "There was an error saving the post. Please try again."
+      render :index
+    end
   end
 
   def destroy
