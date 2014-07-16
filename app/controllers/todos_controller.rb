@@ -2,8 +2,12 @@ class TodosController < ApplicationController
   before_action :set_todo, only: [:destroy]
 
   def index
-    @todos = Todo.where(user_id: current_user.id)
-    @todo = Todo.new
+    if(user_signed_in?)
+      @todos = Todo.where(user_id: current_user.id)
+      @todo = Todo.new
+    else
+      redirect_to root_path
+    end
   end
 
   def new
