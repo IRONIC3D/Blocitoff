@@ -15,6 +15,8 @@ gem 'bootstrap-sass', '~> 3.2.0.0'
 gem 'faker', '~> 1.4.1'
 gem 'devise', '~> 3.2.4'
 gem 'figaro', '~> 0.7.0'
+gem 'whenever', :require => false
+gem 'capistrano', '~> 3.2.1'
 
 group :production do
   gem 'pg'
