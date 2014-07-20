@@ -21,6 +21,7 @@ class TodosController < ApplicationController
       redirect_to todos_path
     else
       flash[:error] = "There was an error saving the post. Please try again."
+      @todos = Todo.where(user_id: current_user.id)
       render :index
     end
 
