@@ -1,1 +1,9 @@
-$('#todo-' +<%= @todo.id %>).fadeOut("slow");
+<% if @todo.destroyed? %>
+	$('#todo-' +<%= @todo.id %>).fadeOut("slow");
+	$('new-todo').prepend("<div class='alert alert-success'><%= flash[:error] %></div>");
+<% else %>
+	<% puts "*******************" %>
+	<% puts "Inside DESTROY ELSE" %>
+	<% puts "#{@todo.title}" %>
+	$('#todo-' +<%= @todo.id %>).prepend("<div class='alert alert-error'><%= flash[:error] %></div>");
+<% end %>

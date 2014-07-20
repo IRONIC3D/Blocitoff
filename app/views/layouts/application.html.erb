@@ -27,8 +27,8 @@
         <div class="nav-collapse collapse">
           <ul class="nav pull-right">
             <% if current_user %>
-              <li id="signin">
-                Hello <%= current_user.email %>
+              <li class="navName">
+                hello <strong><%= current_user.name %></strong>
               </li>
               <li id="signup">
                 <%= link_to "Sign out", destroy_user_session_path, method: :delete %>

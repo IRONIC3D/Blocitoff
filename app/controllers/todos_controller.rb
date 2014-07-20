@@ -1,6 +1,7 @@
 class TodosController < ApplicationController
   respond_to :html, :js
   before_action :set_todo, only: [:destroy]
+  before_action :create_todo, only: [:create]
 
   def index
     if(user_signed_in?)
@@ -15,22 +16,31 @@ class TodosController < ApplicationController
   end
 
   def create
-    @todo = current_user.todos.build(todos_params)
+    @todo = current_user.todos.build( todos_params )
+    @todos = Todo.where(user_id: current_user.id)
+    @new_todo = Todo.new
     if @todo.save
-      flash[:notice] = "Post was saved."
-      redirect_to todos_path
+      flash[:notice] = "Todo was saved."
     else
+      puts "******************"
+      puts "Inside TODOS#CREATE ERROR"
       flash[:error] = "There was an error saving the post. Please try again."
-      @todos = Todo.where(user_id: current_user.id)
-      render :index
+    end
+
+    respond_with(@todo) do |format|
+      format.html { redirect_to todos_path }
     end
 
   end
 
   def destroy
-    @todo.destroy
-    # redirect_to todos_path
-    
+    if @todo.destroy
+      flash[:notice] = "Todo was deleted"
+    else
+      puts "******************"
+      puts "Inside TODOS#DESTROY ERROR"
+      flash[:error] = "Could not remove Todo, there was an error. Please try again"
+    end
     
     respond_with(@todo) do |format|
       format.html { redirect_to todos_path }
@@ -45,5 +55,9 @@ class TodosController < ApplicationController
 
   def set_todo
     @todo = Todo.find(params[:id])
+  end
+
+  def create_todo
+    @todo_item = Todo.new
   end
 end
