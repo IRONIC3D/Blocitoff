@@ -1,6 +1,12 @@
 <%= content_tag :tr, id: "todo-#{todo.id}" do %>
   <td><%= todo.title %></td>
-  <td class="td-1"><% from_time = todo.created_at %><%= distance_of_time_in_words(from_time, from_time + 7.days) %></td>
+  <td class="td-1">
+    <% if todo.created_at + 7.days < Time.now %>
+      0 days
+    <% else %>
+      <%= time_ago_in_words(todo.created_at + 7.days) %>
+    <% end %>
+  </td>
   <td>
     <label class="checkbox">
 

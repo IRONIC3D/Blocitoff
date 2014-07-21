@@ -5,9 +5,9 @@ Rails.application.routes.draw do
   get 'about' => 'welcome#about'
 
   authenticated :user do
-    root to: 'todos#index'
+    root to: 'todos#index', as: :authenticated_root
   end
-  
+
   root to: 'welcome#index'
 
 end

@@ -52,24 +52,9 @@
     <div class="row-fluid row-fluid-1">
       <span class="span12"></span>
     </div>
-
-      <% if flash[:notice] %>  
-        <div class="alert alert-success">
-          <button type="button" class="close" data-dismiss="alert">&times;</button>
-          <%= flash[:notice] %>
-        </div>
-      <% elsif flash[:error] %>
-        <div class="alert alert-danger">
-          <button class="close" type="button" data-dismiss="alert">&times;</button>
-          <%= flash[:error] %>
-        </div>
-      <% elsif flash[:alert] %>
-        <div class="alert alert-warning">
-          <button class="close" typ="button" data-dismiss="alert">&times;</button>
-          <%= flash[:alert] %>
-        </div>
-      <% end %>
-
+    <div class="flashNotice">
+      <%= render partial: 'layouts/flash' %>
+    </div>
       <%= yield %>
 
   </div>
