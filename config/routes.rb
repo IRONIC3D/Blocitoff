@@ -4,6 +4,10 @@ Rails.application.routes.draw do
 
   get 'about' => 'welcome#about'
 
+  authenticated :user do
+    root to: 'todos#index'
+  end
+  
   root to: 'welcome#index'
 
 end
