@@ -5,4 +5,6 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable, :confirmable
 
   has_many :todos, dependent: :destroy
+
+  validates :name, length: {minimum: 3}, presence: true
 end
