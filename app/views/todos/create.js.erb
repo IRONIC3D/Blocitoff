@@ -4,4 +4,4 @@
 <% else %>
 	$('.new-todo').html("<%= escape_javascript(render partial: 'form', locals: { todo: @todo }) %>");
 <% end %>
-$('.flashNotice').prepend("<%= escape_javascript(render partial: 'layouts/flash') %>");
+$('.flashNotice').html("<%= escape_javascript(render partial: 'layouts/flash') %>");
